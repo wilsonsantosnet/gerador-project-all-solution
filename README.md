@@ -1,4 +1,4 @@
-# O que é o Seed
+# O que é o Seed?
 
 Seed é um projeto de template para construir sistemas com administrativos e até mesmo sites, o objetivo desse projeto é fornecer o esqueleto básico de um projeto dotnet core com uma API Rest, um FontEnd SPA Angular e um SSO com Identity serve 4, prover as camadas, as dependências básicas entre elas e pacotes principais como logs e acesso a dados. 
 
