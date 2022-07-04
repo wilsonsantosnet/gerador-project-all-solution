@@ -2,7 +2,7 @@
 
 Seed é um projeto de template para construir sistemas com administrativos e até mesmo sites, o objetivo desse projeto é fornecer o esqueleto básico de um projeto dotnet core com uma API Rest, um FontEnd SPA Angular e um SSO com Identity serve 4, prover as camadas, as dependências básicas entre elas e pacotes principais como logs e acesso a dados. 
 
-Depois de clonado esse repositório, existe um projeto nele chamado **Gerador.Gen.Core** ele utiliza uma série de arquivos txts para construir as classes do projeto baseado em um banco de dados. Ou seja, basta modelar o banco e depois especificar o nome das tabelas no arquivo **ConfigContext**, algo como segue abaixo.
+Depois de clonado esse repositório, existe um projeto nele chamado **Gerador.Gen.Core** ele utiliza uma série de arquivos txts para construir as classes do projeto baseado em um banco de dados. Ou seja, basta modelar o banco e depois especificar o nome das tabelas na classe **ConfigContext** método **ConfigContextDefault**, algo como segue abaixo.
 
 ```
 TableInfo = new UniqueListTableInfo
