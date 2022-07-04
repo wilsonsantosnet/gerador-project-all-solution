@@ -15,20 +15,21 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Sample](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [varchar](50) NOT NULL,
-	[Descricao] [varchar](300) NULL,
-	[SampleTypeId] [int] NOT NULL,
-	[Ativo] [bit] NULL,
-	[Age] [int] NULL,
-	[Category] [int] NULL,
-	[Datetime] [datetime] NULL,
-	[Tags] [varchar](1000) NULL,
-	[UserCreateId] [int] NOT NULL,
-	[UserCreateDate] [datetime] NOT NULL,
-	[UserAlterId] [int] NULL,
-	[UserAlterDate] [datetime] NULL,
+CREATE TABLE [dbo].[Sample]    
+    [Id]             INT            IDENTITY (1, 1) NOT NULL,
+    [Name]           VARCHAR (50)   NOT NULL,
+    [Descricao]      VARCHAR (300)  NULL,
+    [SampleTypeId]   INT            NOT NULL,
+    [Ativo]          BIT            NULL,
+    [Age]            INT            NULL,
+    [Category]       INT            NULL,
+    [Datetime]       DATETIME       NULL,
+    [Tags]           VARCHAR (1000) NULL,
+    [FilePath]       VARCHAR (500)  NULL,
+    [UserCreateId]   INT            NOT NULL,
+    [UserCreateDate] DATETIME       NOT NULL,
+    [UserAlterId]    INT            NULL,
+    [UserAlterDate]  DATETIME       NULL,
  CONSTRAINT [PK_Sample] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
