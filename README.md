@@ -26,6 +26,8 @@ TableInfo = new UniqueListTableInfo
 }
 ```
 
+Essa configuração está baseada em um script de exemplo igual a esse [Sample.Seed.sql](https://github.com/wilsonsantosnet/gerador-project-all-solution/edit/main/Gerador.Gen.Core/Scripts/Sample.Seed.sql) basta rodá-lo em algum banco de dados SQL Server e alterar a Connectionstring do arquivo **appsettings.json** do gerador.
+
 A estrutura é dividida em vários repositórios independentes que são gerenciados também pelo gerador na classe **ConfigExternalResources**, ela vai apontar para os repositórios do git que representam os seguintes componentes:
 
 
