@@ -53,7 +53,7 @@ A estrutura é dividida em vários repositórios independentes que são gerencia
 1. [Gerador de Código](https://medium.com/@wilsonsantos_66971/gerador-de-c%C3%B3digo-7e3c08981e43)
 
 ###### Para saber mais consulte essa lista de artigos relacionados ao gerador e aos frameworks citados acima 
-1. [gerador Init()](https://medium.com/@wilsonsantos_66971/brain-board-b3bf5e550cd9)
+1. [Gerador Init()](https://medium.com/@wilsonsantos_66971/brain-board-b3bf5e550cd9)
 
 
 ###### Digrama macro (obs.: está meio desatualizado, mas serve como referência)
