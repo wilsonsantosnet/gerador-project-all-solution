@@ -153,12 +153,11 @@ namespace Common.Gen
             {
                 Console.WriteLine("Qual dos seguintes Projetos você deseja Atualizar:");
 
-                Console.WriteLine("[1 = >> template-gerador-back-core2.0-DDD]");
-                Console.WriteLine("[2 = >> framework-core2.0-common]");
-                Console.WriteLine("[3 = >> template-gerador-front-coreui-angular6.0]");
-                Console.WriteLine("[4 = >> framework-angular6.0-CRUD]");
-                Console.WriteLine("[5 = >> Seed-layout-front-coreui-angular6.0]");
-                Console.WriteLine("[6 = >> Gerador]");
+                Console.WriteLine("[1 = >> Os Arquivos de Template para o Back-end]");
+                Console.WriteLine("[2 = >> O Framework para o Back-end]");
+                Console.WriteLine("[3 = >> Os Arquivos de Templates para o Front-end]");
+                Console.WriteLine("[4 = >> O Framework para o Front-end]");
+                Console.WriteLine("[5 = >> O esqueleto de projeto para um sistema administrativo]");
 
                 var resouceRepositoryNumberRead = Console.ReadLine();
                 HelperExternalResources.CloneAndCopy(FilterRepository(GetConfigExternarReources, resouceRepositoryNumberRead));
@@ -195,7 +194,7 @@ namespace Common.Gen
 
             if (flow == ((int)Eflows.AtualizarAplicacaoSemcopiar).ToString())
             {
-                PrinstScn.WriteLine("Clonar apenas");
+                PrinstScn.WriteLine("Clonar repositorios do projeto");
                 HelperExternalResources.CloneOnly(GetConfigExternarReources());
                 result = true;
             }
@@ -203,7 +202,7 @@ namespace Common.Gen
 
             if (flow == ((int)Eflows.AtualizarRepository).ToString())
             {
-                PrinstScn.WriteLine("Atualizar repositorio local com arquivos da aplicação");
+                PrinstScn.WriteLine("Exportar para o git");
                 HelperExternalResources.UpdateLocalRepository(GetConfigExternarReources());
                 result = true;
             }
@@ -341,11 +340,11 @@ namespace Common.Gen
         private static void Options()
         {
             Console.WriteLine("Escolha as opções;");
-            Console.WriteLine("[{0} = >> Clonar e Copiar para aplicação]", (int)Eflows.AtualizarAplicacao);
-            Console.WriteLine("[{0} = >> Atualizar repositorio local com arquivos da aplicação]", (int)Eflows.AtualizarRepository);
+            Console.WriteLine("[{0} = >> Atualizar aplicação]", (int)Eflows.AtualizarAplicacao);
+            Console.WriteLine("[{0} = >> Exportar para o git]", (int)Eflows.AtualizarRepository);
             Console.WriteLine("[{0} = >> Gerar Código ]", (int)Eflows.GerarCodigo);
             Console.WriteLine("[{0} = >> Gerar Código de um Contexto ou Classe Especifica]", (int)Eflows.GerarCodigoEspecifico);
-            Console.WriteLine("[{0} = >> Clonar apenas]", (int)Eflows.AtualizarAplicacaoSemcopiar);
+            Console.WriteLine("[{0} = >> Clonar repositorios]", (int)Eflows.AtualizarAplicacaoSemcopiar);
             Console.WriteLine("[{0} = >> Abrir local do projeto]", (int)Eflows.AbrirLocalDoProjeto);
             Console.WriteLine("[{0} = >> Clonar e Copiar para aplicação parcialmente]", (int)Eflows.AtualizarAplicaoParcialmente);
             Console.WriteLine("[{0} = >> Clonar e Criar novo Contexto]", (int)Eflows.GerarEstruturaParaNovoContexto);
