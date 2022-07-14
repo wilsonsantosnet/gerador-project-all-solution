@@ -48,18 +48,19 @@ namespace Sso.Server.Api
         {
             return new List<ApiResource>
             {
-                new ApiResource("ssosa", "Sso Basic")
+                new ApiResource("ssosa", "Sso Basic",new [] {"name", "openid", "email", "role", "tools","typerole", "ssosa", "profile"})
                 {
-                    Scopes = new List<Scope>()
-                    {
-                        new Scope
-                        {
-                            UserClaims = new List<string> {"name", "openid", "email", "role", "tools","typerole"},
-                            Name = "ssosa",
-                            Description = "sso basic",
-                        }
-                    }
+                    Scopes = new List<string>{"name", "openid", "email", "role", "tools","typerole", "ssosa", "profile"}
                 }
+            };
+        }
+
+        public static IEnumerable<ApiScope> GetApiScopes()
+        {
+            return new List<ApiScope>
+            {
+                new ApiScope("ssosa"),
+
             };
         }
 
@@ -70,6 +71,7 @@ namespace Sso.Server.Api
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
                 new IdentityResources.Email(),
+
             };
         }
 
@@ -94,7 +96,7 @@ namespace Sso.Server.Api
                     }
                 },
 
-				new Client
+                new Client
                 {
                     ClientId = "Seed-spa",
                     ClientSecrets = { new Secret("segredo".Sha256()) },
@@ -102,7 +104,7 @@ namespace Sso.Server.Api
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
 
-					RedirectUris = settings.RedirectUris.ToList(),
+                    RedirectUris = settings.RedirectUris.ToList(),
                     PostLogoutRedirectUris =  settings.PostLogoutRedirectUris.ToList() ,
                     AllowedCorsOrigins =  settings.ClientAuthorityEndPoint.ToList(),
 
@@ -113,7 +115,7 @@ namespace Sso.Server.Api
                         StandardScopes.Email,
                         "ssosa"
                     },
-					RequireConsent = false,
+                    RequireConsent = false,
                     AccessTokenLifetime = 43200
                 },
                 new Client
@@ -124,7 +126,7 @@ namespace Sso.Server.Api
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
 
-					RedirectUris = settings.RedirectUris.ToList(),
+                    RedirectUris = settings.RedirectUris.ToList(),
                     PostLogoutRedirectUris =  settings.PostLogoutRedirectUris.ToList() ,
                     AllowedCorsOrigins =  settings.ClientAuthorityEndPoint.ToList(),
 
@@ -135,10 +137,10 @@ namespace Sso.Server.Api
                         StandardScopes.Email,
                         "ssosa"
                     },
-					RequireConsent = false,
+                    RequireConsent = false,
                     AccessTokenLifetime = 43200
                 },
-				new Client
+                new Client
                 {
                     ClientId = "hangfire-dash",
                     ClientName = "HangFire Dashboard",
@@ -170,12 +172,12 @@ namespace Sso.Server.Api
                         StandardScopes.Email,
                         "ssosa"
                     },
-                    Claims = new List<Claim>{
-                        new Claim(JwtClaimTypes.Subject,"991")
+                    Claims = new List<ClientClaim>{
+                        new ClientClaim(JwtClaimTypes.Subject,"991")
                     },
                     AccessTokenLifetime = 43200
                 },
-				new Client
+                new Client
                 {
                     ClientId = "swagger-dash",
                     ClientName = "swagger Dashboard",
@@ -194,7 +196,7 @@ namespace Sso.Server.Api
                     RequireConsent = false,
                     AccessTokenLifetime = 43200
                 },
-				new Client
+                new Client
                 {
                     ClientId = "Seed-spa-anonymous",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
