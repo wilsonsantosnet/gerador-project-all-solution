@@ -45,9 +45,9 @@ A estrutura é dividida em vários repositórios independentes que são gerencia
 ## Repositorio Atuais
 
 1. [gerador-template-back](https://github.com/wilsonsantosnet/gerador-template-back)
-1. [gerador-template-front](https://github.com/wilsonsantosnet/template-gerador-front-coreui-angular6.0)
-1. [gerador-framework-back](https://github.com/wilsonsantosnet/backend-framework-common)
-1. [gerador-framework-front](https://github.com/wilsonsantosnet/framework-angular6.0-CRUD)
+1. [gerador-template-front](https://github.com/wilsonsantosnet/gerador-template-front)
+1. [gerador-framework-back](https://github.com/wilsonsantosnet/gerador-framework-back)
+1. [gerador-framework-front](https://github.com/wilsonsantosnet/gerador-framework-front.git)
 1. [gerador-project-admin-front](https://github.com/wilsonsantosnet/gerador-project-admin-front)
 1. [gerador-project-site-front](https://github.com/wilsonsantosnet/gerador-project-site-front)
 1. [gerador-project-all-solution](https://github.com/wilsonsantosnet/gerador-project-all-solution)
