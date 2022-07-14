@@ -2086,6 +2086,11 @@ namespace Common.Gen
                 DefineFieldFilterDefault(config, tableInfo);
                 DefineDataItemFieldName(infos, tableInfo);
                 tableInfo.IsAuditField = Audit.ExistsAuditFields(infos);
+                
+
+                var tableCollisionWithNameSpace = infos.Where(_ => config.Namespace.Split(".").Contains(_.Table)).Any();
+                if(tableCollisionWithNameSpace)
+                    throw new Exception("Tabela " + tableInfo.TableName + " tem nome que colide com a namespacing " + config.Namespace );
 
 
                 if (infos.Count == 0)
