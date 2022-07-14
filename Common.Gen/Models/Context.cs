@@ -141,7 +141,7 @@ namespace Common.Gen
 
         public string NamespaceRoot
         {
-            get { return _namespace; }
+            get { return _namespace.Split('.').FirstOrDefault(); }
         }
 
         public string NamespaceDomainSource
