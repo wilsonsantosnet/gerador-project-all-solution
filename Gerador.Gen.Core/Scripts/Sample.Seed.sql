@@ -15,7 +15,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Sample]    
+CREATE TABLE [dbo].[Sample]   (
     [Id]             INT            IDENTITY (1, 1) NOT NULL,
     [Name]           VARCHAR (50)   NOT NULL,
     [Descricao]      VARCHAR (300)  NULL,
