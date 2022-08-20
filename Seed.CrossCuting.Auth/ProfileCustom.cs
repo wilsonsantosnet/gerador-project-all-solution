@@ -36,7 +36,10 @@ namespace Seed.CrossCuting
             var _claims = user.GetClaims();
             var roles = user.GetRole().IsNotNullOrEmpty() ? System.Text.Json.JsonSerializer.Deserialize<IEnumerable<string>>(user.GetRole()) : new List<string>();
             var typeTole = user.GetTypeRole();
+			 var iss = user.GetClaimByName<string>("iss");
 
+            if (iss.IsNotNullOrEmpty() && iss.Contains("b2clogin"))
+                _claims.AddRange(ClaimsForAdmin());
             if (typeTole.ToLower() == ETypeRole.Admin.ToString().ToLower())
                 _claims.AddRange(ClaimsForAdmin());
             if (typeTole.ToLower() == ETypeRole.Anonymous.ToString().ToLower())
