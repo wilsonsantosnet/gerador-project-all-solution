@@ -88,6 +88,15 @@ namespace <#namespace#>.Api
 				options.RequireHttpsMetadata = false;
 				options.ApiName = "ssosa";
 			});
+			
+			//services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            //.AddMicrosoftIdentityWebApi(options =>
+            //{
+            //    Configuration.Bind("AzureAdB2C", options);
+
+            //    options.TokenValidationParameters.NameClaimType = "name";
+            //},
+            //options => { Configuration.Bind("AzureAdB2C", options); });
 
             // Add cross-origin resource sharing services Configurations
             var configuration = new ConfigSettingsBase();
